@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitching Post Restaurant</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #F4A460;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .menu-card {
+            transition: all 0.4s ease;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: none;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .contact-info {
+            background-color: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-info:hover {
+            transform: translateY(-5px);
+        }
+
+        .food-img {
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-card:hover .food-img {
+            transform: scale(1.1);
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 8px 15px;
+            color: white !important;
+            font-weight: 600;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .social-links a {
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            color: var(--secondary-color) !important;
+        }
+
+        .navbar {
+            background: transparent !important;
+            transition: background 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(0,0,0,0.8) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-brand {
+            color: white !important;
+            font-weight: 700;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 80vh;
+            }
+            
+            .display-1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-info {
+                margin-bottom: 2rem;
+            }
+        }
+
+        .btn-warning {
+            background-color: var(--secondary-color);
+            border: none;
+            padding: 12px 30px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-warning:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(244, 164, 96, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#" data-aos="fade-right">
+                <img src="logo.png" alt="Hitching Post Logo" class="me-2" style="width: 50px; height: 50px;">
+                Hitching Post
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home" data-aos="fade-down" data-aos-delay="100">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu" data-aos="fade-down" data-aos-delay="200">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-aos="fade-down" data-aos-delay="300">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-1 mb-4" data-aos="fade-up">Welcome to Hitching Post</h1>
+            <p class="lead mb-4" data-aos="fade-up" data-aos-delay="200">Experience authentic American cuisine in a rustic modern setting</p>
+            <a href="#menu" class="btn btn-lg btn-warning" data-aos="fade-up" data-aos-delay="400">View Our Menu</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Our Signature Dishes</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card menu-card">
+                        <img src="https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1" class="food-img" alt="Steak">
+                        <div class="card-body">
+                            <h5 class="card-title">Prime Ribeye Steak</h5>
+                            <p class="card-text">Perfectly grilled to your liking with our special house seasoning</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card menu-card">
+                        <img src="https://images.unsplash.com/photo-1550317138-10000687a72b" class="food-img" alt="Burger">
+                        <div class="card-body">
+                            <h5 class="card-title">Classic American Burger</h5>
+                            <p class="card-text">Hand-crafted patty with fresh local ingredients</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card menu-card">
+                        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e" class="food-img" alt="BBQ Ribs">
+                        <div class="card-body">
+                            <h5 class="card-title">BBQ Baby Back Ribs</h5>
+                            <p class="card-text">Slow-cooked and smothered in our signature BBQ sauce</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="contact-info">
+                        <h2 class="mb-4">Visit Us</h2>
+                        <p><i class="fas fa-map-marker-alt me-2"></i>4259 CA-49, Ahwahnee, CA, United States</p>
+                        <p><i class="fas fa-phone me-2"></i><a href="tel:+15596837917" class="text-dark">+1 559-683-7917</a></p>
+                        <div class="mt-4">
+                            <h4>Hours of Operation</h4>
+                            <p>Monday - Thursday: 11:00 AM - 9:00 PM</p>
+                            <p>Friday - Saturday: 11:00 AM - 10:00 PM</p>
+                            <p>Sunday: 11:00 AM - 8:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3186.0462353065424!2d-119.7854!3d37.3645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80969c8b7a7e8001%3A0x5f6c60297e2eb8a0!2s4259%20CA-49%2C%20Ahwahnee%2C%20CA%2095601!5e0!3m2!1sen!2sus!4v1635787200000!5m2!1sen!2sus"
+                        width="100%" 
+                        height="450" 
+                        style="border:0; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p data-aos="fade-up">&copy; 2023 Hitching Post Restaurant. All rights reserved.</p>
+            <div class="social-links" data-aos="fade-up" data-aos-delay="200">
+                <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-yelp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Add background to navbar on scroll
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.navbar').classList.add('scrolled');
+            } else {
+                document.querySelector('.navbar').classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
